@@ -55,7 +55,7 @@ function App() {
   }
 
   const hehe = bannerData.map( data => (
-    <Banner key={`banner-${data.color}`}>
+    <Banner key={`banner-${data.color}`} color={data.color}>
       <img src={data.imgUrl}/>
       {data.msg}
     </Banner>
