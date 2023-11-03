@@ -10,7 +10,6 @@ const badgeColors = ["gray", "red", "yellow", "green", "blue", "indigo", "purple
 const bannerData = [
   {
     "variant" : "success",
-    "color" : "green", 
     "imgUrl" : "/assets/check-circle.png",
     "alt" : "icon",
     "msg": "Congratulations!",
@@ -18,7 +17,6 @@ const bannerData = [
   },
   {
     "variant" : "warning",
-    "color" : "yellow",
     "imgUrl" : "/assets/warning-exclamation.png",
     "alt" : "icon",
     "msg": "Attention",
@@ -26,7 +24,6 @@ const bannerData = [
   }, 
   {
     "variant" : "error",
-    "color" : "red",
     "imgUrl" : "/assets/x-circle.png",
     "alt" : "icon",
     "msg": "There is a prioblem with your application",
@@ -35,7 +32,6 @@ const bannerData = [
   }, 
   {
     "variant" : "neutral",
-    "color" : "indigo",
     "imgUrl" : "/assets/blue-info.png",
     "alt" : "icon",
     "msg": "Update available",
@@ -60,7 +56,7 @@ function App() {
 
   const createBanners = (bannerData, includeSubtitle = false) => {
     return bannerData.map( data => (
-      <Banner key={`banner-${data.variant}`} className="banner" color={data.color}>
+      <Banner key={`banner-${data.variant}`} className="banner" variant={data.variant}>
         <img src={data.imgUrl} alt={data.alt}/>
         <div>
           {data.msg}

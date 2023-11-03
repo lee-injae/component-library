@@ -71,25 +71,24 @@ h1, h2, h3, h4 {
   background-color: #FCE7F3;
 }
 
-.banner-green{
+.banner-success{
   
   color: #065F46;
   background-color: #ECFDF5;
 }
 
-.banner-yellow {
+.banner-warning {
   color: #92400E;
   background-color: #FFFBEB;
 }
 
-.banner-red {
+.banner-error {
   color: #92400E;
   font-weight: 700;
   background-color: #FEF2F2;
 }
 
-.banner-indigo {
+.banner-neutral {
   color: #1E40AF;
   background-color: #EFF6FF;
-
 }
