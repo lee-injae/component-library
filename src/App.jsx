@@ -4,25 +4,32 @@ import Badge from "./components/Badge/Badge"
 
 const colors = ["gray", "red", "yellow", "green", "blue", "indigo", "purple", "pink" ]
 
-
 function App() {
 
-  const squareBadges = colors.map(color => {
-    return <Badge key={color} color={color} shape="square">
-              Badge
-            </Badge>
-  })
+  const createBadges = (variant) => {
+    return colors.map(color => (
+      <Badge key={`${variant}-${color}`} color={color} variant={variant} className="badge">
+        Badge
+      </Badge>
+    ))
+  }
 
-  const pillBadges = colors.map(color => {
-    return <Badge key={color} color={color} shape="pill">
-            Badge
-          </Badge>
-  })
+  const squareBadges = createBadges("square")
+  const pillBadges = createBadges("pill")
 
   return (
     <>
-     {squareBadges}
-     {pillBadges}
+      <div>
+        <h1 className="">BADGES</h1>
+        <div>
+          <h2>Sqaure</h2> 
+          {squareBadges}
+        </div>
+        <div>
+          <h2>Pill</h2> 
+          {pillBadges}
+        </div>
+      </div>
     </>
   )
 }
