@@ -13,6 +13,9 @@ h1, h2, h3, h4 {
   display: inline-block;
 }
 
+.banner {
+
+}
 
 /* Variant */
 
@@ -26,6 +29,8 @@ h1, h2, h3, h4 {
 }
 
 /* Colors */
+
+
 .gray {
   color: #1F2937;
   background-color: #F3F4F6;
@@ -64,4 +69,28 @@ h1, h2, h3, h4 {
 .pink{
   color: #9D174D;
   background-color: #FCE7F3;
+}
+
+.banner-green {
+  color: #065F46;
+  background-color: #34D399;
+
+}
+
+.banner-green {
+  color: #065F46;
+  background-color: #34D399;
+
+}
+
+.banner-green {
+  color: #065F46;
+  background-color: #34D399;
+
+}
+
+.banner-green {
+  color: #065F46;
+  background-color: #34D399;
+
 }
