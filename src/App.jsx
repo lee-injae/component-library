@@ -4,47 +4,16 @@ import Badge from "./components/Badge/Badge"
 import Banner from "./components/Banner/Banner"
 import Card from "./components/Card/Card"
 
+import { FaCloudUploadAlt } from "react-icons/fa";
+import { IconContext } from "react-icons";
 
-const badgeColors = ["gray", "red", "yellow", "green", "blue", "indigo", "purple", "pink" ]
+import { data } from "./data.jsx"
 
-const bannerData = [
-  {
-    "status" : "success",
-    "imgUrl" : "/assets/check-circle.png",
-    "alt" : "icon",
-    "msg": "Congratulations!",
-    "subtitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam."
-  },
-  {
-    "status" : "warning",
-    "imgUrl" : "/assets/warning-exclamation.png",
-    "alt" : "icon",
-    "msg": "Attention",
-    "subtitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."
-  }, 
-  {
-    "status" : "error",
-    "imgUrl" : "/assets/x-circle.png",
-    "alt" : "icon",
-    "msg": "There is a prioblem with your application",
-    "subtitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."
 
-  }, 
-  {
-    "status" : "neutral",
-    "imgUrl" : "/assets/blue-info.png",
-    "alt" : "icon",
-    "msg": "Update available",
-    "subtitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam."
-  }
-]
-
-const bannerColors = ["green", "yellow", "red", "indigo"]
-
-const bannerTitles = ["Congratulations!", "Attention", "There is a prioblem with your application", "Update available"]
-const bannerSubtitles = ["Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum." ]
 
 function App() {
+
+  const {badgeColors, bannerData, cardData} = data
 
   const createBadges = (variant) => {
     return badgeColors.map(color => (
@@ -68,6 +37,17 @@ function App() {
     ))
   }
 
+  const createCards = (cardData) => {
+      return cardData.map(data => (
+        <Card key={data.title}>
+          <h3>{data.title}</h3>
+          <p>{data.text}</p>
+        </Card>
+      ))
+  }
+
+
+  const card = createCards(cardData)
   const bannersWithoutSubtitles = createBanners(bannerData)
   const bannersWithSubtitles = createBanners(bannerData, true)
   const squareBadges = createBadges("square")
@@ -91,6 +71,15 @@ function App() {
         {bannersWithoutSubtitles}
         {bannersWithSubtitles}
       </div>
+      <IconContext.Provider value={{ color: "blue", className: "global-class-name" }}>
+        <div>
+          <h1>CARDS</h1>
+          <FaCloudUploadAlt 
+                className="cloud-upload-icon"
+           />
+          {card}
+        </div>
+      </IconContext.Provider>
     </>
   )
 }

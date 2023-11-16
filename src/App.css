@@ -5,7 +5,7 @@ body{
 
 /* font */
 
-h1, h2, h3, h4 {
+h1, h2 {
   font-family: 'Permanent Marker', cursive;
 }
 
@@ -25,6 +25,10 @@ h1, h2, h3, h4 {
   width: 48px;
   height: 48px;
   border-radius: 6px;
+}
+
+.cloud-upload-icon {
+  font-size: 2em;
 }
 
 /* Variant */
