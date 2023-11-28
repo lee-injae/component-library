@@ -1,9 +1,16 @@
 import React from "react"
+import classNames from "classnames"
 
+export default function Card(  { children, className } ){
+    
+  
 
-export default function Card(  { children } ){
     return (
-            <div>
+            <div 
+                className={className}
+                // onMouseEnter={handleMouseEnter}
+                // onMouseLeave={handleMouseLeave}
+            >
                 {children}
             </div>
         

@@ -9,6 +9,28 @@ h1, h2 {
   font-family: 'Permanent Marker', cursive;
 }
 
+h3 {
+  font-weight: 400;
+}
+
+.card h3 {
+  font-weight: 500;
+  font-size: 1.25em;
+  
+}
+
+.card p {
+  color: #6B7280
+}
+
+
+/* containers */
+
+.cards-container {
+  margin: 1em;
+  /* display: flex; */
+}
+
 /* Components */
 
 .badge {
@@ -20,11 +42,25 @@ h1, h2 {
 }
 
 .card {
-  background-color: "#9D174D";
-  color: #fff;
-  width: 48px;
-  height: 48px;
-  border-radius: 6px;
+  background-color: #F9FAFB;
+  color: #111827;
+  width: 380px;
+  height: 200px;
+  border-radius: 8px;
+  position: relative;
+  padding-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover, 
+.card:active, 
+.card:focus {
+  background-color: darkgray;
+  cursor: pointer;
 }
 
 .cloud-upload-icon {
@@ -106,6 +142,19 @@ h1, h2 {
   color: #1E40AF;
   background-color: #EFF6FF;
 }
+
+/* Icon */
+
+.cloud-upload-icon {
+  width: 15%;
+  position: absolute;
+  top: -5%;
+}
+
+
+
+
+
 
 
 

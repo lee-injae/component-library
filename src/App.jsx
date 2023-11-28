@@ -15,6 +15,16 @@ function App() {
 
   const {badgeColors, bannerData, cardData} = data
 
+  const [isHover, setIsHover] = React.useState(false)
+
+  const handleMouseEnter = () => {
+    setIsHover(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsHover(false)
+  }
+
   const createBadges = (variant) => {
     return badgeColors.map(color => (
       <Badge key={`${variant}-${color}`} color={color} variant={variant} className="badge">
@@ -37,17 +47,27 @@ function App() {
     ))
   }
 
-  const createCards = (cardData) => {
-      return cardData.map(data => (
-        <Card key={data.title}>
-          <h3>{data.title}</h3>
-          <p>{data.text}</p>
+  const createCards = (cardData, style = {}) => {
+      return cardData.map(card => (
+        <Card key={card.title}
+          className="card"
+          style={style}
+        >
+          <IconContext.Provider value={{ color: "blue"}}>
+              <FaCloudUploadAlt 
+                  className="cloud-upload-icon"
+              />
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+          </IconContext.Provider>
         </Card>
       ))
   }
 
 
+
   const card = createCards(cardData)
+  
   const bannersWithoutSubtitles = createBanners(bannerData)
   const bannersWithSubtitles = createBanners(bannerData, true)
   const squareBadges = createBadges("square")
@@ -71,15 +91,11 @@ function App() {
         {bannersWithoutSubtitles}
         {bannersWithSubtitles}
       </div>
-      <IconContext.Provider value={{ color: "blue", className: "global-class-name" }}>
-        <div>
-          <h1>CARDS</h1>
-          <FaCloudUploadAlt 
-                className="cloud-upload-icon"
-           />
-          {card}
-        </div>
-      </IconContext.Provider>
+      <div className="cards-container">
+        <h1>CARDS</h1>
+        {card}
+        {card}
+      </div>
     </>
   )
 }
