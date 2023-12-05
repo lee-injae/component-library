@@ -37,12 +37,12 @@ function App() {
     ))
   }
 
-  const createCard = (cardData, bool) => {
+  const createCard = (cardData, hoverableBool = false) => {
       return cardData.map(card => (
         <Card key={card.title}
           className="card"
-          onHover={() => console.log("hovered")}
-          initialHover={bool}
+          hoverable={hoverableBool}
+          onHover={hoverableBool ? () => console.log("hovered") : null}
         >
           <IconContext.Provider value={{ color: "blue"}}>
               <FaCloudUploadAlt 
@@ -57,7 +57,9 @@ function App() {
 
 
 
-  const card = createCard(cardData)
+  const card1 = createCard(cardData, false)
+  const card2 = createCard(cardData, true)
+
   
   const bannersWithoutSubtitles = createBanners(bannerData)
   const bannersWithSubtitles = createBanners(bannerData, true)
@@ -84,8 +86,8 @@ function App() {
       </div>
       <div className="cards-container">
         <h1>CARDS</h1>
-        {card}
-        {card}
+        {card1}
+        {card2}
       </div>
     </>
   )

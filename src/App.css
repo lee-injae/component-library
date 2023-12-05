@@ -56,12 +56,12 @@ h3 {
   box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
 }
 
-.card:hover, 
+/* .card:hover, 
 .card:active, 
 .card:focus {
   background-color: darkgray;
   cursor: pointer;
-}
+} */
 
 .cloud-upload-icon {
   font-size: 2em;
