@@ -15,16 +15,6 @@ function App() {
 
   const {badgeColors, bannerData, cardData} = data
 
-  const [isHover, setIsHover] = React.useState(false)
-
-  const handleMouseEnter = () => {
-    setIsHover(true)
-  }
-
-  const handleMouseLeave = () => {
-    setIsHover(false)
-  }
-
   const createBadges = (variant) => {
     return badgeColors.map(color => (
       <Badge key={`${variant}-${color}`} color={color} variant={variant} className="badge">
@@ -47,11 +37,12 @@ function App() {
     ))
   }
 
-  const createCards = (cardData, style = {}) => {
+  const createCard = (cardData, bool) => {
       return cardData.map(card => (
         <Card key={card.title}
           className="card"
-          style={style}
+          onHover={() => console.log("hovered")}
+          initialHover={bool}
         >
           <IconContext.Provider value={{ color: "blue"}}>
               <FaCloudUploadAlt 
@@ -66,7 +57,7 @@ function App() {
 
 
 
-  const card = createCards(cardData)
+  const card = createCard(cardData)
   
   const bannersWithoutSubtitles = createBanners(bannerData)
   const bannersWithSubtitles = createBanners(bannerData, true)
