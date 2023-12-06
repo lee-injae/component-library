@@ -1,13 +1,12 @@
 import React from "react"
 import useHover from "../../hooks/useHover"
-import classNames from "classnames"
 
 export default function Card({ children, className, onHover, hoverable }){
     const [hoverRef, isHovered]= useHover()
     
     const hoverStyle = (hoverable && isHovered) ? {
-        backgroundColor: "purple",
-        cursor : "pointer"
+        backgroundColor: "lightblue",
+        cursor: "pointer"
     } : {}
 
     return (     
