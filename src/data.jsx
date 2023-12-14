@@ -9,7 +9,6 @@ const data = {
          "purple", 
          "pink"
     ],
-
     bannerData: [
         {
             "status" : "success",
@@ -41,13 +40,34 @@ const data = {
             "subtitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam."
           }
     ],
-
     cardData: [
         {
           title: "Easy Deployment",
           text: "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis."
         }
+    ],
+    testimonialWithPicData: [
+      {
+        profileImage: "/assets/image.png",
+        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. ",
+        name: "May Anderson",
+        company: "workcation",
+        role: "CTO",
+        companyLogo: ""
+      }, 
+    ],
+    testimonialWithoutPicData: [
+      {
+        profileImage: "",
+        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. ",
+        name: "May Anderson",
+        company: "workcation",
+        role: "CTO",
+        companyLogo: "/assets/workcation-logo.png"
+      }
     ]
+
+
 }
 
 export { data }

@@ -3,6 +3,8 @@ import './App.css'
 import Badge from "./components/Badge/Badge"
 import Banner from "./components/Banner/Banner"
 import Card from "./components/Card/Card"
+import TestimonialsWithoutPic from "./components/Testimonials/TestimonialsWithoutPic.jsx"
+import TestimonialsWithPic from "./components/Testimonials/TestimonialsWithPic.jsx"
 
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { IconContext } from "react-icons";
@@ -13,7 +15,12 @@ import { data } from "./data.jsx"
 
 function App() {
 
-  const {badgeColors, bannerData, cardData} = data
+  const { badgeColors, 
+    bannerData, 
+    cardData, 
+    testimonialWithPicData,
+    testimonialWithoutPicData  
+  } = data
 
   const createBadges = (variant) => {
     return badgeColors.map(color => (
@@ -55,12 +62,25 @@ function App() {
       ))
   }
 
-
-
-  const card1 = createCard(cardData, false)
-  const card2 = createCard(cardData, true)
+  const createTestimonialWithPic = (data) => {
+    return data.map(testimonial => (
+      <TestimonialsWithPic
+        key={testimonial.name}
+      >
+        <img src={testimonial.profileImage} alt={testimonial.name}/>
+        <h3>{testimonial.message}</h3>
+        <p>{testimonial.name}</p>
+        <p>{testimonial.company}, {testimonial.role}</p>
+      </TestimonialsWithPic>
+    ))
+  }
 
   
+
+
+  const testimonialWithPic = createTestimonialWithPic(testimonialWithPicData)
+  const cardWithoutHover = createCard(cardData, false)
+  const cardWithHover = createCard(cardData, true)
   const bannersWithoutSubtitles = createBanners(bannerData)
   const bannersWithSubtitles = createBanners(bannerData, true)
   const squareBadges = createBadges("square")
@@ -86,8 +106,12 @@ function App() {
       </div>
       <div className="cards-container">
         <h1>CARDS</h1>
-        {card1}
-        {card2}
+        {cardWithoutHover}
+        {cardWithHover}
+      </div>
+      <div className="testimonials-container">
+        <h1>TESTIMONIALS</h1>
+        {testimonialWithPic}
       </div>
     </>
   )
