@@ -79,9 +79,24 @@ function App() {
     ))
   }
 
+  const createTestimonialWithoutPic = (data) => {
+    return data.map(testimonial => (
+      <TestimonialsWithoutPic
+        key={testimonial.name}
+        className="testimonial-without-pic"
+      >
+        <img className="company-logo" src={testimonial.companyLogo} alt={`${testimonial.company}-logo`}/>
+        <h3>"{testimonial.message}"</h3>
+        <p>{testimonial.name} <span className="blue-font"> / </span> <span className="grey-font">{testimonial.company}, {testimonial.role}</span></p>
+        
+        
+      </TestimonialsWithoutPic>
+    ))
+  }
 
 
 
+  const testinomialWithoutPic = createTestimonialWithoutPic(testimonialWithoutPicData)
   const testimonialWithPic = createTestimonialWithPic(testimonialWithPicData)
   const cardWithoutHover = createCard(cardData, false)
   const cardWithHover = createCard(cardData, true)
@@ -118,7 +133,7 @@ function App() {
         <h2>WITH PIC</h2>
         {testimonialWithPic}
         <h2>WITHOUT PIC</h2>
-        {}
+        {testinomialWithoutPic}
       </div>
     </>
   )
