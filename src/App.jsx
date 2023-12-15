@@ -66,16 +66,20 @@ function App() {
     return data.map(testimonial => (
       <TestimonialsWithPic
         key={testimonial.name}
+        className="testimonial-with-pic"
       >
-        <img src={testimonial.profileImage} alt={testimonial.name}/>
-        <h3>{testimonial.message}</h3>
-        <p>{testimonial.name}</p>
-        <p>{testimonial.company}, {testimonial.role}</p>
+        <img className="profile-img" src={testimonial.profileImage} alt={testimonial.name}/>
+        <div className="testimonial-contents">
+          <img src="../../assets/quotation.png" alt="quotation"/>
+          <h3>{testimonial.message}</h3>
+          <p>{testimonial.name}</p>
+          <p>{testimonial.company}, {testimonial.role}</p>
+        </div>
       </TestimonialsWithPic>
     ))
   }
 
-  
+
 
 
   const testimonialWithPic = createTestimonialWithPic(testimonialWithPicData)
@@ -111,7 +115,10 @@ function App() {
       </div>
       <div className="testimonials-container">
         <h1>TESTIMONIALS</h1>
+        <h2>WITH PIC</h2>
         {testimonialWithPic}
+        <h2>WITHOUT PIC</h2>
+        {}
       </div>
     </>
   )

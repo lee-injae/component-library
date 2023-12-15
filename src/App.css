@@ -1,6 +1,6 @@
 
 body{
-  font-size: 12px;
+  font-size: 16px;
 }
 
 /* font */
@@ -9,8 +9,10 @@ h1, h2 {
   font-family: 'Permanent Marker', cursive;
 }
 
-h3 {
+h3, p {
   font-weight: 400;
+  margin:0;
+  font-family: "Inter", sans-serif;
 }
 
 .card h3 {
@@ -22,6 +24,13 @@ h3 {
 .card p {
   color: #6B7280
 }
+
+.testimonial-with-pic h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1em;
+}
+
+
 
 
 /* containers */
@@ -55,7 +64,6 @@ h3 {
   text-align: center;
   box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
   margin: 3em;
-  
 }
 
 /* .card:hover, 
@@ -67,6 +75,40 @@ h3 {
 
 .cloud-upload-icon {
   font-size: 2em;
+}
+
+.testimonial-with-pic {
+  background-color: #2545B8;
+  width: 1000px;
+  height: 400px;
+  position: relative;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  padding-right: 3em;
+  padding-left: 1em;
+}
+
+.profile-img {
+  position:absolute;
+  width: 380px;
+  height: 460px;
+  top: -10px;
+  left: 20px;
+  border-radius: 12px;
+}
+
+.testimonial-quotation {
+  font-size: 5em;
+  font-weight: 700;
+  opacity: 50%;
+  margin:0;
+}
+
+.testimonial-contents {
+  width: 60%;
 }
 
 /* Variant */
@@ -152,6 +194,8 @@ h3 {
   position: absolute;
   top: -5%;
 }
+
+
 
 
 
