@@ -106,9 +106,9 @@ function App() {
   const pillBadges = createBadges("pill")
 
   return (
-    <>
-      <div>
-        <h1 className="">BADGES</h1>
+    <div className="container">
+      <div className="badges-container">
+        <h1>BADGES</h1>
         <div>
           <h2>Square</h2> 
           {squareBadges}
@@ -118,10 +118,12 @@ function App() {
           {pillBadges}
         </div>
       </div>
-      <div>
+      <div className="banners-container">
         <h1>BANNERS</h1>
-        {bannersWithoutSubtitles}
+        <h2>MULTI LINE</h2>
         {bannersWithSubtitles}
+        <h2>SINGLE LINE</h2>
+        {bannersWithoutSubtitles}
       </div>
       <div className="cards-container">
         <h1>CARDS</h1>
@@ -135,7 +137,7 @@ function App() {
         <h2>WITHOUT PIC</h2>
         {testinomialWithoutPic}
       </div>
-    </>
+    </div>
   )
 }
 
