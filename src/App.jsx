@@ -88,11 +88,12 @@ function App() {
         key={testimonial.name}
         className="testimonial-without-pic"
       >
-        <img className="company-logo" src={testimonial.companyLogo} alt={`${testimonial.company}-logo`}/>
+        <img src={testimonial.companyLogo} alt={`${testimonial.company}-logo`}/>
         <h3>"{testimonial.message}"</h3>
-        <p>{testimonial.name} <span className="blue-font"> / </span> <span className="grey-font">{testimonial.company}, {testimonial.role}</span></p>
-        
-        
+        <p>{testimonial.name} 
+          <span className="blue-font"> / </span> 
+          <span className="grey-font">{testimonial.company}, {testimonial.role}</span>
+        </p>
       </TestimonialsWithoutPic>
     ))
   }
