@@ -34,11 +34,14 @@ function App() {
     return bannerData.map( data => (
       <Banner key={`banner-${data.status}`} 
               className="banner" 
-              status={data.status}>
-        <img src={data.imgUrl} alt={data.alt}/>
+              status={data.status}
+        >
         <div>
-          {data.msg}
-          {includeSubtitle && data.subtitle && <p>{data.subtitle}</p>}
+          <img src={data.imgUrl} alt={data.alt}/>
+          <p>{data.msg}</p>
+        </div>
+        <div>
+          {includeSubtitle && data.subtitle && <p className="banner-p">{data.subtitle}</p>}
         </div>
       </Banner>
     ))
